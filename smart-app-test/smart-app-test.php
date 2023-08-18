@@ -28,18 +28,18 @@ require_once 'requests/ajax/send-email.php';
 /*
  * Load custom template and add it to admin
  */
-add_filter( 'page_template', 'wpa3396_page_template' );
-add_filter( 'theme_page_templates', 'wpse_288589_add_template_to_select', 10, 4 );
-function wpa3396_page_template( $page_template ){
+add_filter( 'page_template', 'custom_page_template' );
+add_filter( 'theme_page_templates', 'custom_page_template_admin', 10, 4 );
+function custom_page_template( $page_template ){
 
 	if ( get_page_template_slug() == 'templates/form-page-template.php' ) {
 		$page_template = dirname( __FILE__ ) . '/templates/form-page-template.php';
 	}
 	return $page_template;
 }
-function wpse_288589_add_template_to_select( $post_templates, $wp_theme, $post, $post_type ) {
+function custom_page_template_admin( $post_templates, $wp_theme, $post, $post_type ) {
 
-	$post_templates['templates/form-page-template.php'] = __('Configurator');
+	$post_templates['templates/form-page-template.php'] = __('SmartApp Form');
 
 	return $post_templates;
 }
