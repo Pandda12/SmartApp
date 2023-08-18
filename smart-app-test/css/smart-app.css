@@ -1,0 +1,35 @@
+#smart-app-custom-form-container .smart-app-custom-form input{
+    width: 100%;
+}
+#smart-app-custom-form-container .smart-app-custom-form .input_name_lastName{
+    display: flex;
+    justify-content: space-between;
+}
+#smart-app-custom-form-container .smart-app-custom-form .input_name_lastName label{
+    width: 48%;
+}
+#smart-app-custom-form-container .smart-app-custom-form .input_email,
+#smart-app-custom-form-container .smart-app-custom-form .input_subject{
+    margin-bottom: 10px;
+}
+#smart-app-custom-form-container .form-notice{
+    font-size: 25px;
+    text-align: center;
+}
+.smart-app-custom-form .loading{
+    display: flex;
+    justify-content: center;
+    animation: rotation 2s infinite linear;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+.smart-app-custom-form .message.success{
+    font-size: 30px;
+    text-align: center;
+}
