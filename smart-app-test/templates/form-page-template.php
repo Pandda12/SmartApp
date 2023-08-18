@@ -59,7 +59,7 @@ get_header();
                 const message = $('#custom_form_message').val()
 
                 if (result === false) {
-                    alert("sorry");
+                    alert("Invalid email");
                     return false;
                 }
 
