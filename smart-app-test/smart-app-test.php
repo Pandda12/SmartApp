@@ -26,6 +26,7 @@ function my_smtp_phpemailer( $phpmailer ) {
 require_once 'requests/ajax/send-email.php';
 require_once 'requests/rest-api/hubspot.php';
 require_once 'inc/email-log.php';
+require_once 'inc/hubspot-log.php';
 
 /*
  * Load custom template and add it to admin
