@@ -43,8 +43,5 @@ get_header();
             </defs>
         </svg>
     </noindex>
-
-
 </article><!-- #post-<?php the_ID(); ?> -->
-
 <?php get_footer();
