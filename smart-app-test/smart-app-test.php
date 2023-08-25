@@ -47,12 +47,15 @@ function custom_page_template_admin( $post_templates, $wp_theme, $post, $post_ty
 }
 
 /**
- * Global CSS
+ * Load CSS and JS only on page template
  */
-function smart_app_css(){
-	wp_enqueue_style( 'ai-global-styles', plugins_url( '/css/smart-app.css', __FILE__ ) );
+function form_css_and_js(){
+	if ( is_page_template('templates/form-page-template.php') ) {
+		wp_enqueue_style( 'form-css', plugins_url( '/css/smart-app.css', __FILE__ ) );
+		wp_enqueue_script('form-script', plugins_url( '/js/form.js', __FILE__ ), array('jquery'), '1.0', true);
+	}
 }
-add_action( 'wp_enqueue_scripts', 'smart_app_css' );
+add_action( 'wp_enqueue_scripts', 'form_css_and_js' );
 
 /**
  * Fix jQuery in Twenty Twenty-One WordPress theme
