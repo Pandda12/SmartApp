@@ -24,6 +24,8 @@ function my_smtp_phpemailer( $phpmailer ) {
 }
 
 require_once 'requests/ajax/send-email.php';
+require_once 'requests/rest-api/hubspot.php';
+require_once 'inc/email-log.php';
 
 /*
  * Load custom template and add it to admin
@@ -52,15 +54,9 @@ function smart_app_css(){
 }
 add_action( 'wp_enqueue_scripts', 'smart_app_css' );
 
-function email_log($status, $email){
-
-	$log_file = __DIR__.'/log/email_log.txt';
-
-	date_default_timezone_set('Europe/Minsk');
-	$today = date("d-m-Y H:i:s");
-
-	$data = file_get_contents($log_file);
-	$data .= '[' . $today . '] email status - ' . $status . ' customer email (' . $email . ")\n";
-	file_put_contents($log_file, $data);
-
-}
+/**
+ * Fix jQuery in Twenty Twenty-One WordPress theme
+ */
+add_action('wp_enqueue_scripts', function (){
+	wp_enqueue_script('jquery');
+});

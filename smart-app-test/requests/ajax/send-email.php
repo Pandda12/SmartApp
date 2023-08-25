@@ -34,7 +34,16 @@ function mailSend(){
 
 		$adminMail = wp_mail('smart.app.custom.form@gmail.com', 'You have got new message from WordPress', $message, $headers);
 		$customerMail = wp_mail($email, 'Thanks for your message', $customerMessage, $headers);
-		if ($adminMail && $customerMail) {
+
+		$user = array(
+			"firstname" => $firstName,
+			"lastname" => $lastName,
+			"email" => $email
+		);
+
+		$createContact = HubSpotCreateContact($user);
+
+		if ($adminMail && $customerMail && $createContact) {
 			email_log('success', $email);
 			wp_send_json(['status' => 'success']);
 		} else {

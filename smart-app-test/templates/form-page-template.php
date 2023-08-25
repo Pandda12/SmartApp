@@ -1,7 +1,6 @@
 <?php
 get_header();
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-content">
 		<div id="smart-app-custom-form-container">
@@ -44,7 +43,6 @@ get_header();
             </defs>
         </svg>
     </noindex>
-    <script src="<?php echo plugins_url('js/jQuery-3.7.js', __DIR__) ?>"></script>
     <script>
         jQuery(document).ready(function ($) {
             $("form").submit(function (event) {
@@ -93,18 +91,13 @@ get_header();
                         console.log('An error occurred while sending the request');
                     }
                 });
-
                 window.onbeforeunload = null;
                 event.preventDefault();
                 return true;
             });
         });
-
     </script>
-	<footer class="entry-footer default-max-width">
-		<?php twenty_twenty_one_entry_meta_footer(); ?>
-	</footer><!-- .entry-footer -->
+
 </article><!-- #post-<?php the_ID(); ?> -->
 
-<?php
-get_footer();
+<?php get_footer();
