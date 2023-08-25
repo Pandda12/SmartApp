@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 
 function HubSpotCreateContact($user): bool {
-	$url = 'https://api.hubapi.com/crm/v3/objects/contacts  ';
+	$url = 'https://api.hubapi.com/crm/v3/objects/contacts';
 	$params = array(
 		'headers' => array(
 			'Content-Type' => 'application/json',
